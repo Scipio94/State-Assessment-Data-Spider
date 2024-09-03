@@ -1,2 +1,26 @@
-# State-Assessment-Data-Spider
-Retrieve assessement data for a charter school network via a spider to follow hyperlinks that will download files containing testing results.
+# State Assessment Data Spider
+
+## There are three parts to creating this Spider:
+
+### 1. Importing the proper packagaes:
+  - import scrapy
+  - from scrapy import Selector
+  - import requests as r
+  - from scrapy.crawler import CrawlerProcess
+
+### 2. Creating the Spider:
+~~~ python
+class SpiderClassName(scrapy.Spider):
+  name = 'SpiderName'
+  def start_requests(self):
+    # code here
+  def parse(self, response):
+    #code here
+~~~
+
+### 3. Running Spider
+~~~ python
+process = CrawlerProcess()  #--> instansiating process
+process.crawl(SpiderClassName) #--> telling process which Spider to run
+process.start() #--> running spider
+~~~
